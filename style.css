@@ -1,0 +1,28 @@
+#grid-container {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    width: 350px;
+    height: 350px;
+    border: 2px solid black;
+}
+
+.row {
+    display: flex;
+    height: 100%;
+}
+
+.square {
+    width: 100%;
+}
+
+#btn-new-grid {
+    margin-bottom: 10px;
+    border: none;
+    padding: 10px 20px;
+    background-color: aquamarine;
+    color: black;
+    font-weight:bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
