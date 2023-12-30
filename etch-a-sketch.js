@@ -14,7 +14,8 @@ grid.addEventListener('mouseover', (event) => {
 })
 
 btnNewGrid.addEventListener('click', () => {
-    gridSize = Number(prompt('Number of squares per side:'))
+    gridSize = Number(prompt('Number of squares per side:'));
+    gridSize = (gridSize < 100) ? gridSize : 100;
     if (!gridSize) return;
     Array.from(grid.children).forEach(element => element.remove());
     createGrid(gridSize);
