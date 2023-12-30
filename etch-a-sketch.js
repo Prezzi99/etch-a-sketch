@@ -1,4 +1,5 @@
 const grid = document.querySelector('#grid-container');
+const btnNewGrid = document.querySelector('#btn-new-grid');
 
 //Create 16 x 16 grid
 let gridSize = 16;
@@ -6,10 +7,13 @@ createGrid(gridSize);
 
 grid.addEventListener('mouseover', (event) => {
     if (event.target.id == 'grid-container') return;
-    event.target.style.backgroundColor = 'aquamarine';
+    let rgb = [];
+    for (let i = 0; i < 3; i++) rgb[i] = Math.trunc((Math.random() * 156) + 100);
+    event.target.style.backgroundColor = `rgb(${rgb.toString()})`;
+    btnNewGrid.style.backgroundColor = `rgb(${rgb.toString()})`;
 })
 
-document.querySelector('#btn-new-grid').addEventListener('click', () => {
+btnNewGrid.addEventListener('click', () => {
     gridSize = Number(prompt('Number of squares per side:'))
     if (!gridSize) return;
     Array.from(grid.children).forEach(element => element.remove());
